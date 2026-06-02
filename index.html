@@ -30,7 +30,7 @@ button.action{padding:8px 12px;border:none;border-radius:8px;background:#3b82f6;
 <button onclick="show('moy')">📈 Moyenne</button>
 <button onclick="show('todo')">✅ To‑Do</button>
 <button onclick="show('pomodoro')">⏱️ Pomodoro</button>
- <a href="StudyHub_3e_Ultra_V2.html"> Jeux </a>
+<button onclick="show('jeux')">🕹️ Jeux</button>
  <a href="StudyHub_3e_Ultra_V3.html"> musique </a>
 </nav>
 
@@ -79,8 +79,62 @@ button.action{padding:8px 12px;border:none;border-radius:8px;background:#3b82f6;
 <h2>Pomodoro</h2>
 <p id="timer">25:00</p>
 <button class="action" onclick="startPomodoro()">Démarrer</button>
+ <div id="jeux" class="page">
+<div class="grid">
+
+<div class="card">
+<h3>🎰 Machine à chance</h3>
+<button onclick="slot()">Jouer (-10)</button>
+<p id="slotR"></p>
+</div>
+
+<div class="card">
+<h3>🎲 Dé</h3>
+<button onclick="dice()">Lancer</button>
+<p id="diceR"></p>
+</div>
+
+<div class="card">
+<h3>✊ Pierre-Feuille-Ciseaux</h3>
+<button onclick="rps('Pierre')">Pierre</button>
+<button onclick="rps('Feuille')">Feuille</button>
+<button onclick="rps('Ciseaux')">Ciseaux</button>
+<p id="rpsR"></p>
+</div>
+
+<div class="card">
+<h3>🔢 Devine le nombre</h3>
+<input id="guess">
+<button onclick="guessGame()">Tester</button>
+<p id="guessR"></p>
+</div>
+
+<div class="card">
+<h3>🧠 Calcul mental</h3>
+<p id="calcQ"></p>
+<input id="calcA">
+<button onclick="calcCheck()">Valider</button>
+<p id="calcR"></p>
+</div>
+
+<div class="card">
+<h3>⭕ Morpion Solo</h3>
+<div id="morpion"></div>
+</div>
+
 </div>
 </div>
+
+<div id="badges" class="page">
+<div class="card">
+<h2>🏆 Badges</h2>
+<ul id="badgeList">
+<li>🥉 Bronze : 100 XP</li>
+<li>🥈 Argent : 250 XP</li>
+<li>🥇 Or : 500 XP</li>
+</ul>
+</div>
+
 
 <script>
 function show(id){
